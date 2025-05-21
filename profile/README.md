@@ -5,7 +5,7 @@ This organization contains three main repositories, each serving a distinct yet 
 
 1. **TF AWS Infra**: Handles the infrastructure setup using Terraform to manage AWS cloud resources.
 2. **WebApp**: Contains the Spring Boot web application that runs on the infrastructure provisioned by Terraform.
-3. **Serverless**: Handles event-driven computing for email verification using AWS Lambda and Mailgun API.
+3. **Serverless**: Handles event-driven computing for email verification using AWS Lambda and SendGrid API.
 
 **Infrastructure Architecture**
 
@@ -39,7 +39,7 @@ This repository is responsible for delivering the application logic and services
 
 ### 3. **Serverless** [Link](https://github.com/cloud-computing-csye-6225/serverless)
 The **Serverless** repository contains the source code for a Spring-based application designed to run seamlessly on the AWS Lambda set up by **TF AWS Infra**. The lambda function is responsible for fetching the user data passed in the SNS created by **TF AWS Infra** and, based on that data, sending mail to that user from the email ID passed in that data.
-- The email is sent to the user using Mailgun.
+- The email is sent to the user using SendGrid.
 - This feature is to validate and activate the user as soon as the user clicks the link sent in the mail.
 
 This repository is responsible for activating the user account/validating the email id by using the cloud services provided via **TF AWS Infra**.
